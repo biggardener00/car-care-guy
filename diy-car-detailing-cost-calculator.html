@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIY Car Detailing Cost Calculator - Car Care Guy</title>
+<meta name="description" content="Estimate DIY car detailing costs, cost per wash, and annual costs, with example kit tables and a working calculator.">
+<style>body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#1a2733;line-height:1.6}header{background:#0b3d5c;color:#fff;padding:28px 20px;text-align:center}main{max-width:900px;margin:0 auto;padding:24px 20px}nav{background:#eef4f8;padding:12px 20px;text-align:center}nav a{margin:0 8px;color:#0b3d5c;font-weight:bold}h2{color:#0b3d5c;border-bottom:2px solid #e2e8f0;padding-bottom:6px}table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #cbd5e1;padding:8px;text-align:left}th{background:#eef4f8}img{max-width:100%;height:auto;border-radius:8px}.box{background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:16px;margin:16px 0}label{display:block;margin:8px 0 4px;font-weight:bold}input{padding:8px;width:100%;max-width:320px}button{background:#0b6fa4;color:#fff;border:0;padding:10px 18px;border-radius:6px;cursor:pointer;font-size:16px}footer{background:#f1f5f9;padding:20px;text-align:center;color:#475569}a{color:#0b6fa4}</style>
+</head>
+<body>
+<header><h1>DIY Car Detailing Cost Calculator</h1><p>Know what a home wash really costs, before you buy another bottle.</p></header>
+<nav><a href="index.html">Home</a><a href="car-wash-soap-dilution-calculator.html">Dilution Calculator</a><a href="diy-car-detailing-cost-calculator.html">Cost Calculator</a><a href="car-care-maintenance-schedule-template.html">Maintenance Schedule</a><a href="microfiber-towel-inventory-and-washing-tracker.html">Microfiber Tracker</a><a href="car-wash-product-compatibility-checklist.html">Compatibility Checklist</a></nav>
+<main>
+<img src="images/cost.svg" alt="Illustration of a car, a calculator and coins showing detailing costs" width="900" height="300">
+<h2>How the calculator works</h2>
+<p>Enter the total cost of the products you will use up in a year, or the cost of a kit, plus any extra costs such as water and electricity if you want to include them. Then enter how many washes you do in a year. Cost per wash = total yearly cost &divide; washes per year. This separates one-off kit costs from the soap and consumables you replace.</p>
+<h2>Calculator</h2>
+<div class="box">
+<label for="kit">Kit and product cost for the year (USD, example currency)</label><input id="kit" type="number" value="120" min="0" step="1">
+<label for="extra">Extra yearly costs, such as water, electricity and towel washing (USD)</label><input id="extra" type="number" value="30" min="0" step="1">
+<label for="washes">Washes and details in the year</label><input id="washes" type="number" value="24" min="1" step="1">
+<p><button type="button" onclick="calcCost()">Calculate cost per wash</button></p>
+<p id="result"><strong>Example result:</strong> (120 + 30) &divide; 24 = $6.25 per wash.</p>
+</div>
+<script>
+function calcCost(){var k=parseFloat(document.getElementById('kit').value)||0;var e=parseFloat(document.getElementById('extra').value)||0;var w=parseFloat(document.getElementById('washes').value);if(!w||w<=0){document.getElementById('result').textContent='Enter a number of washes greater than zero.';return;}var total=k+e;var per=total/w;document.getElementById('result').innerHTML='<strong>Result:</strong> Total yearly cost $'+total.toFixed(2)+' &divide; '+w+' washes = <strong>$'+per.toFixed(2)+' per wash</strong>. Monthly average: $'+(total/12).toFixed(2)+' per month.';}
+</script>
+<h2>Worked example: starter kit</h2>
+<p>All prices below are <strong>illustrative examples in USD</strong> to show how the maths works. Check current local prices before you buy.</p>
+<table><tr><th>Item</th><th>Example price</th><th>How long it lasts in this example</th></tr>
+<tr><td>Car wash soap, 1 litre</td><td>$15</td><td>About 20 washes at the label dilution</td></tr>
+<tr><td>Wash mitt</td><td>$10</td><td>One season, with careful washing</td></tr>
+<tr><td>Two buckets</td><td>$20</td><td>Several years</td></tr>
+<tr><td>Microfiber towels, pack of 6</td><td>$18</td><td>Many washes, if washed correctly</td></tr>
+<tr><td>Drying towel</td><td>$15</td><td>Many washes</td></tr>
+<tr><td>Wheel cleaner and brush</td><td>$22</td><td>About 12 uses</td></tr>
+<tr><td>Glass cleaner</td><td>$8</td><td>About 20 uses</td></tr>
+<tr><td>Interior cleaner and protectant</td><td>$18</td><td>About 12 interior cleans</td></tr>
+<tr><td><strong>Starter kit total</strong></td><td><strong>$126</strong></td><td>-</td></tr></table>
+<p>Example: $126 of kit, plus $24 of replacement soap and towels in the year = $150. At 24 washes, that is $150 &divide; 24 = $6.25 per wash. At 12 washes, the same $150 is $12.50 per wash, because the kit cost is spread over fewer washes.</p>
+<h2>Worked example: fuller kit</h2>
+<table><tr><th>Extra item</th><th>Example price</th><th>Notes</th></tr>
+<tr><td>Foam cannon</td><td>$35</td><td>Only if you have a pressure washer</td></tr>
+<tr><td>Spray wax / sealant</td><td>$20</td><td>Use after washing, as the label directs</td></tr>
+<tr><td>Clay bar or clay mitt</td><td>$18</td><td>Use only when paint feels rough, with lubricant</td></tr>
+<tr><td>Tyre dressing</td><td>$12</td><td>Avoid tread and brake parts</td></tr>
+<tr><td>Vacuum and brushes (if buying new)</td><td>$45</td><td>Many owners already own a vacuum</td></tr>
+<tr><td><strong>Extra total</strong></td><td><strong>$130</strong></td><td>Starter kit $126 + $130 = $256 in year one</td></tr></table>
+<p>Example: $256 &divide; 24 washes = $10.67 per wash in year one. In year two, if you only replace $60 of consumables, $60 &divide; 24 = $2.50 per wash, because the durable kit is already bought.</p>
+<h2>What to include, and what to leave out</h2>
+<table><tr><th>Include</th><th>Why</th></tr>
+<tr><td>Soap, cleaners, wax and dressings you use up</td><td>These are the real running costs</td></tr>
+<tr><td>Towels and mitts you replace</td><td>They wear out and need replacing</td></tr>
+<tr><td>Water, electricity and laundry if you can estimate them</td><td>Gives a fuller cost per wash</td></tr>
+<tr><td>Your time, separately</td><td>Note hours, but keep money and time in separate totals</td></tr></table>
+<h2>Tips to keep costs down without cutting corners</h2>
+<ul><li>Measure soap to the label dilution. Overuse is the fastest way to waste money.</li><li>Wash and reuse microfiber towels correctly instead of replacing them early.</li><li>Buy a product only when you have a job for it. A shelf of unused bottles is not a saving.</li><li>Protect paint regularly. A clean, protected surface is usually quicker and cheaper to wash.</li><li>Keep a simple log: date, products used, and any product finished. Review it after 3 months.</li></ul>
+<p>For more car care guides, see <a href="https://carcareguy.com">Car Care Guy at carcareguy.com</a>.</p>
+</main>
+<footer><p>Car Care Guy. Prices are illustrative examples only; check local prices and product labels.</p></footer>
+</body>
+</html>
