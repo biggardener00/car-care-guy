@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Wash Soap Dilution Calculator and Usage Guide - Car Care Guy</title>
+<meta name="description" content="Work out how much car wash soap to use in a bucket or foam cannon, with worked examples, a dilution table and a step-by-step usage guide.">
+<style>body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#1a2733;line-height:1.6}header{background:#0b3d5c;color:#fff;padding:28px 20px;text-align:center}main{max-width:900px;margin:0 auto;padding:24px 20px}nav{background:#eef4f8;padding:12px 20px;text-align:center}nav a{margin:0 8px;color:#0b3d5c;font-weight:bold}h2{color:#0b3d5c;border-bottom:2px solid #e2e8f0;padding-bottom:6px}table{border-collapse:collapse;width:100%;margin:16px 0}th,td{border:1px solid #cbd5e1;padding:8px;text-align:left}th{background:#eef4f8}img{max-width:100%;height:auto;border-radius:8px}.box{background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:16px;margin:16px 0}label{display:block;margin:8px 0 4px;font-weight:bold}input,select{padding:8px;width:100%;max-width:320px}button{background:#0b6fa4;color:#fff;border:0;padding:10px 18px;border-radius:6px;cursor:pointer;font-size:16px}footer{background:#f1f5f9;padding:20px;text-align:center;color:#475569}a{color:#0b6fa4}</style>
+</head>
+<body>
+<header><h1>Car Wash Soap Dilution Calculator and Usage Guide</h1><p>Use the right amount of soap: enough to lift dirt, not so much that rinsing becomes hard work.</p></header>
+<nav><a href="index.html">Home</a><a href="car-wash-soap-dilution-calculator.html">Dilution Calculator</a><a href="diy-car-detailing-cost-calculator.html">Cost Calculator</a><a href="car-care-maintenance-schedule-template.html">Maintenance Schedule</a><a href="microfiber-towel-inventory-and-washing-tracker.html">Microfiber Tracker</a><a href="car-wash-product-compatibility-checklist.html">Compatibility Checklist</a></nav>
+<main>
+<img src="images/dilution.svg" alt="Illustration of a wash bucket, a soap bottle and bubbles showing a 1 to 10 dilution ratio" width="900" height="300">
+<h2>What a dilution ratio means</h2>
+<p>A ratio written as 1:10 means 1 part soap to 10 parts water. The finished mix has 11 parts in total. So the soap is 1 divided by 11 of the total volume, and the water is 10 divided by 11.</p>
+<p><strong>Formula:</strong> Soap (ml) = Total mix (ml) &divide; (1 + water parts). Water (ml) = Total mix (ml) &minus; Soap (ml).</p>
+<p>Always check your product label first. Some soaps are made to be used neat in a foam cannon bottle, some are pre-diluted, and some give a different ratio for a bucket and for a foam cannon. The label wins over any general table.</p>
+<h2>Calculator</h2>
+<div class="box">
+<label for="total">Total mix you want (millilitres)</label>
+<input id="total" type="number" value="10000" min="100" step="100">
+<label for="ratio">Dilution ratio (soap : water)</label>
+<select id="ratio"><option value="5">1:5 - strong, for very dirty cars if the label allows it</option><option value="10" selected>1:10 - common bucket wash</option><option value="20">1:20 - light wash / maintenance wash</option><option value="50">1:50 - very light / foam cannon bottle mix</option><option value="100">1:100 - highly concentrated soap</option><option value="256">1:256 - concentrated soap, check the label</option></select>
+<p><button type="button" onclick="calc()">Calculate</button></p>
+<p id="result"><strong>Example result:</strong> For 10,000 ml at 1:10, use about 909 ml of soap and 9,091 ml of water.</p>
+</div>
+<script>
+function calc(){var t=parseFloat(document.getElementById('total').value);var w=parseFloat(document.getElementById('ratio').value);if(!t||t<=0){document.getElementById('result').textContent='Enter a total volume greater than zero.';return;}var soap=t/(1+w);var water=t-soap;document.getElementById('result').innerHTML='<strong>Result:</strong> For '+t.toLocaleString()+' ml at 1:'+w+', use about <strong>'+Math.round(soap)+' ml of soap</strong> and <strong>'+Math.round(water)+' ml of water</strong>. Measure the soap first, then add the water and stir gently.';}
+</script>
+<h2>Worked examples</h2>
+<table><tr><th>Mix size</th><th>Ratio</th><th>Soap</th><th>Water</th><th>Typical use</th></tr>
+<tr><td>1 litre (1,000 ml)</td><td>1:10</td><td>91 ml</td><td>909 ml</td><td>Foam cannon bottle, small mix</td></tr>
+<tr><td>5 litres (5,000 ml)</td><td>1:10</td><td>455 ml</td><td>4,545 ml</td><td>Half bucket</td></tr>
+<tr><td>10 litres (10,000 ml)</td><td>1:10</td><td>909 ml</td><td>9,091 ml</td><td>Full wash bucket</td></tr>
+<tr><td>10 litres (10,000 ml)</td><td>1:20</td><td>476 ml</td><td>9,524 ml</td><td>Light maintenance wash</td></tr>
+<tr><td>1 litre (1,000 ml)</td><td>1:100</td><td>10 ml</td><td>990 ml</td><td>Concentrated soap, spray bottle</td></tr>
+<tr><td>5 litres (5,000 ml)</td><td>1:256</td><td>19 ml</td><td>4,981 ml</td><td>Concentrated soap, bucket</td></tr></table>
+<p>Worked check for the 10-litre, 1:10 example: 10,000 &divide; 11 = 909.1 ml of soap. Water is 10,000 &minus; 909 = 9,091 ml. For the 1:256 example: 5,000 &divide; 257 = 19.5 ml, rounded to 19 ml.</p>
+<h2>Quick dilution table</h2>
+<table><tr><th>Ratio</th><th>Soap per 1 litre</th><th>Soap per 5 litres</th><th>Soap per 10 litres</th></tr>
+<tr><td>1:5</td><td>167 ml</td><td>833 ml</td><td>1,667 ml</td></tr>
+<tr><td>1:10</td><td>91 ml</td><td>455 ml</td><td>909 ml</td></tr>
+<tr><td>1:20</td><td>48 ml</td><td>238 ml</td><td>476 ml</td></tr>
+<tr><td>1:50</td><td>20 ml</td><td>98 ml</td><td>196 ml</td></tr>
+<tr><td>1:100</td><td>10 ml</td><td>50 ml</td><td>99 ml</td></tr></table>
+<h2>How to use the mix</h2>
+<ol><li>Rinse the car first to remove loose dirt and grit.</li><li>Measure the soap with a measuring cup or the cap, using the calculator result. Do not guess from the bottle.</li><li>Add soap to the bucket or foam cannon bottle first, then add water. Stir or shake gently to mix.</li><li>Wash in the shade if you can, one panel at a time, from the roof down. Keep the surface wet.</li><li>Rinse each section before the soap dries, then rinse the whole car and dry with a clean microfiber towel.</li><li>Rinse buckets, mitts and bottles after use, and store soap as the label directs.</li></ol>
+<h2>Common mistakes to avoid</h2>
+<table><tr><th>Mistake</th><th>Why it matters</th><th>Do this instead</th></tr>
+<tr><td>Using far too much soap</td><td>Leaves residue, is hard to rinse and wastes product</td><td>Measure to the label ratio</td></tr>
+<tr><td>Washing in hot sun</td><td>Soap and water dry on paint and can leave spots</td><td>Wash in shade or on a cool panel</td></tr>
+<tr><td>Using one dirty bucket</td><td>Grit is carried back onto paint</td><td>Use a rinse bucket, or rinse the mitt often</td></tr>
+<tr><td>Letting soap dry</td><td>Can leave marks that need extra rinsing</td><td>Work panel by panel and keep surfaces wet</td></tr></table>
+<p>For more car care guides and product advice, see <a href="https://carcareguy.com">Car Care Guy at carcareguy.com</a>.</p>
+</main>
+<footer><p>Car Care Guy. Always follow the product label. Ratios above are general worked examples.</p></footer>
+</body>
+  </html>
